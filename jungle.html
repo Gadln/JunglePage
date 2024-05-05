@@ -31,7 +31,9 @@
       }
 
       const Description = () => {
-        return <p>Ici achetez toutes les plantes dont vous rêvez !🌟 </p>
+        const text="Ici achetez toutes les plantes dont vous rêvez !"
+        const emojis="✨✨✨"
+        return (<p>{text.slice(0, 23) + emojis }</p>)
       }
       ReactDOM.render(
       <React.Fragment><Banner /><Banner /></React.Fragment>, 
