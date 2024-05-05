@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La maison jungle</title>
+</head>
+<body>
+  <h1 id="root">La page de la maison Jungle</h1>
+    <script
+    crossorigin
+    src="https://unpkg.com/react@16/umd/react.development.js">
+  </script>
+  <script
+    crossorigin
+    src="https://unpkg.com/react-dom@16/umd/react-dom.development.js">
+  </script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      function Banner() {
+        return (<React.Fragment>
+          <Header />
+          <Cart />
+          <Description />
+        </React.Fragment>
+          )
+      }
+
+      const Header = () => {
+        const title = "La maison Jungle 🌺 "
+        return (<h1>{title.toUpperCase() }</h1>)
+      }
+
+      const Cart = () => {
+        const monsteraPrice = 8
+        const ivyPrice = 10
+        const flowerPrice = 15
+        return (<div>
+          <h2>Panier</h2>
+            <ul>
+              <li>Monstera :{ monsteraPrice } euros</li>
+              <li>Lierre :{ ivyPrice } euros</li>
+              <li>Bouquet de fleurs :{ flowerPrice } euros</li>
+          </ul>
+          Total: {monsteraPrice + ivyPrice + flowerPrice } euros
+          </div>
+          )
+      }
+
+
+      const Description = () => {
+        const text="Ici achetez toutes les plantes dont vous rêvez !"
+        const emojis="✨✨✨"
+        return (<p>{text + emojis }</p>)
+      }
+      ReactDOM.render(
+      <React.Fragment><Banner /></React.Fragment>, 
+      document.getElementById('root')
+      )
+    </script>
+
+</body>
+</html>
