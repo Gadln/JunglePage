@@ -21,10 +21,14 @@
       const Header = () => {
         return <h1>La maison Jungle 🌺</h1>
       }
+
+      const Description = () => {
+        return <p>Ici achetez toutes les plantes dont vous rêvez !🌟 </p>
+      }
       ReactDOM.render(
-        <Header />, 
-        document.getElementById('root')
-        )
+      <React.Fragment><Header /><Description /></React.Fragment>, 
+      document.getElementById('root')
+      )
     </script>
 
 </body>
