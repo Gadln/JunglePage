@@ -18,6 +18,14 @@
   </script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel">
+      function Banner() {
+        return (<div>
+          <Header />
+          <Description />
+        </div>
+          )
+      }
+
       const Header = () => {
         return <h1>La maison Jungle 🌺</h1>
       }
@@ -26,7 +34,7 @@
         return <p>Ici achetez toutes les plantes dont vous rêvez !🌟 </p>
       }
       ReactDOM.render(
-      <React.Fragment><Header /><Description /></React.Fragment>, 
+      <React.Fragment><Banner /><Banner /></React.Fragment>, 
       document.getElementById('root')
       )
     </script>
