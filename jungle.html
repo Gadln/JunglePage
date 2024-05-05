@@ -19,24 +19,43 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel">
       function Banner() {
-        return (<div>
+        return (<React.Fragment>
           <Header />
+          <Cart />
           <Description />
-        </div>
+        </React.Fragment>
           )
       }
 
       const Header = () => {
-        return <h1>La maison Jungle 🌺</h1>
+        const title = "La maison Jungle 🌺 "
+        return (<h1>{title.toUpperCase() }</h1>)
       }
+
+      const Cart = () => {
+        const monsteraPrice = 8
+        const ivyPrice = 10
+        const flowerPrice = 15
+        return (<div>
+          <h2>Panier</h2>
+            <ul>
+              <li>Monstera :{ monsteraPrice } euros</li>
+              <li>Lierre :{ ivyPrice } euros</li>
+              <li>Bouquet de fleurs :{ flowerPrice } euros</li>
+          </ul>
+          Total: {monsteraPrice + ivyPrice + flowerPrice } euros
+          </div>
+          )
+      }
+
 
       const Description = () => {
         const text="Ici achetez toutes les plantes dont vous rêvez !"
         const emojis="✨✨✨"
-        return (<p>{text.slice(0, 23) + emojis }</p>)
+        return (<p>{text + emojis }</p>)
       }
       ReactDOM.render(
-      <React.Fragment><Banner /><Banner /></React.Fragment>, 
+      <React.Fragment><Banner /></React.Fragment>, 
       document.getElementById('root')
       )
     </script>
