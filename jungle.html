@@ -21,8 +21,8 @@
       function Banner() {
         return (<React.Fragment>
           <Header />
-          <Cart />
           <Description />
+          <Cart />
         </React.Fragment>
           )
       }
@@ -39,9 +39,9 @@
         return (<div>
           <h2>Panier</h2>
             <ul>
-              <li>Monstera :{ monsteraPrice } euros</li>
-              <li>Lierre :{ ivyPrice } euros</li>
-              <li>Bouquet de fleurs :{ flowerPrice } euros</li>
+              <li>Monstera : { monsteraPrice } euros</li>
+              <li>Lierre : { ivyPrice } euros</li>
+              <li>Bouquet de fleurs : { flowerPrice } euros</li>
           </ul>
           Total: {monsteraPrice + ivyPrice + flowerPrice } euros
           </div>
@@ -52,7 +52,7 @@
       const Description = () => {
         const text="Ici achetez toutes les plantes dont vous rêvez !"
         const emojis="✨✨✨"
-        return (<p>{text + emojis }</p>)
+        return (<p>{text + ' ' + emojis }</p>)
       }
       ReactDOM.render(
       <React.Fragment><Banner /></React.Fragment>, 
