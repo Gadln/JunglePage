@@ -4,6 +4,11 @@ import Banner from './Banner';
 import ShoppingList from './ShoppingList';
 import logo from '../assets/logo.png'
 
+function handleSubmit (e) {
+	e.preventDefault()
+	alert(e.target['my_input'].value)
+}
+
 function App() {
   return (<React.Fragment>
    <Banner>
@@ -12,6 +17,10 @@ function App() {
 			</Banner>
 			{/* <Cart /> */}
 			<ShoppingList />
+			<form onSubmit={handleSubmit}>
+				<input type='text' name='my_input' defaultValue='Tapez votre texte' />
+				<button type='submit'>Entrer</button>
+			</form>
    </React.Fragment>
   );
 }
