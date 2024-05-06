@@ -1,8 +1,7 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Banner from './components/Banner';
-import Cart from './components/cart';
+import '../styles/App.css';
+import Banner from './Banner';
+import Cart from './cart';
 
 function App() {
   return (<React.Fragment>
