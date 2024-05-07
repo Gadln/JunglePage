@@ -20,7 +20,7 @@ function Cart() {
           </ul>
           Total: {monsteraPrice + ivyPrice + flowerPrice } euros*/}
 
-        <div className='lmj-cart'>
+        <div>
           Monstera : {monsteraPrice} €
           <button className='lmj-cart-add-button' onClick={()=> updateCart(cart + 1)}>
             ➕

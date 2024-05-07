@@ -1,10 +1,10 @@
 import React from 'react';
-import '../styles/App.css';
 import Banner from './Banner';
 import ShoppingList from './ShoppingList';
 import logo from '../assets/logo.png'
 import Footer from './Footer';
 import Cart from './cart';
+import '../styles/App.css';
 
 function App() {
   return (<React.Fragment>
@@ -14,8 +14,8 @@ function App() {
 			</Banner>
 			<div className='lmj-layout-inner'>
 				<Cart />
+				<ShoppingList />
 			</div>
-			<ShoppingList />
 			<Footer />
    </React.Fragment>
   );
