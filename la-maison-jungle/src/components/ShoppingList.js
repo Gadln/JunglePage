@@ -1,6 +1,8 @@
 import { plantList } from '../datas/plantList'
 import PlantItem from './Plantitem'
 import '../styles/ShoppingList.css'
+import '../styles/Plantitem.css'
+import '../styles/Cart.css'
 
 
 function ShoppingList({ cart, updateCart }) {
@@ -10,6 +12,36 @@ function ShoppingList({ cart, updateCart }) {
 		[]
 	)
 
+	function addToCart(name, price) {
+		const currentPlantSaved = cart.find((plant) => plant.name === name)
+		if (currentPlantSaved) {
+			const cartFilteredCurrentPlant = cart.filter(
+				(plant) => plant.name !== name
+			)
+			updateCart([
+				...cartFilteredCurrentPlant,
+				{ name, price, amount: currentPlantSaved.amount + 1 }
+			])
+		} else {
+			updateCart([...cart, { name, price, amount: 1 }])
+		}
+	}
+
+	function deleteToCart(name, price) {
+		const currentPlantSaved = cart.find((plant) => plant.name === name)
+		if (currentPlantSaved) {
+			const cartFilteredCurrentPlant = cart.filter(
+				(plant) => plant.name !== name
+			)
+			updateCart([
+				...cartFilteredCurrentPlant,
+				{ name, price, amount: currentPlantSaved.amount - 1 }
+			])
+		} else {
+			updateCart([...cart, { name, price, amount: 1 }])
+		}
+	}
+
 	return (
 		<div className='lmj-shopping-list'>
 			<ul>
@@ -18,11 +50,18 @@ function ShoppingList({ cart, updateCart }) {
 				))}
 			</ul>
 			<ul className='lmj-plant-list'>
-				{plantList.map(({ id, cover, name, water, light }) => (
+				{plantList.map(({ id, cover, name, water, light, price }) => (
 					<div key={id}>
-						<PlantItem cover={cover} name={name} water={water} light={light}/>
-						<button className='lmj-cart-add-button' onClick={() => updateCart(cart + 1)}>➕</button>
-						<button className='lmj-cart-add-button' onClick={() => updateCart(cart - 1)}>➖</button>
+						 <PlantItem 
+            key={id} 
+            cover={cover} 
+            name={name} 
+            water={water} 
+            light={light} 
+            price={price}
+            addToCart={addToCart}
+            deleteToCart={deleteToCart}
+        />
 					</div>
 				))}
 			</ul>
