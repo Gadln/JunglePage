@@ -1,0 +1,60 @@
+.lmj-plant-item img.lmj-plant-item-cover {
+	width: 250px; /* Fixe la largeur de l'image à 150px */
+	height: 250px; /* Fixe la hauteur de l'image à 150px */
+	object-fit: cover; /* Coupe l'image pour qu'elle s'adapte à la taille définie */
+	margin-bottom: 10px; /* Ajoute de l'espace sous l'image */
+	display: block; /* S'assure que l'image est un bloc pour éviter les marges indésirables */
+	border-radius: 10px;
+}
+
+.lmj-plant-item {
+	margin: 5px;
+	margin-left:15rem;
+	width: 250px;
+	display: flex;
+	align-items: center; /* Centrer les éléments */
+	justify-content: center; /* Centrer les éléments */
+	flex-direction: column;
+	text-transform: capitalize;
+	position: relative;
+	text-align: center;
+	padding: 10px; /* Ajoute du padding pour un meilleur espacement interne */
+	box-sizing: border-box; /* S'assure que le padding et la bordure sont inclus dans la largeur totale */
+}
+
+.lmj-sales {
+	position: absolute;
+	right: 0px;
+	top: 10px;
+	font-weight: 500;
+	color: white;
+	padding: 5px 10px;
+	background-color: #31b572;
+	border-radius: 3px; /* Ajoute un léger arrondi pour un meilleur aspect visuel */
+}
+
+.lmj-plant-item-price {
+	position: absolute;
+	border-radius: 20px 20px 20px 0;
+	background-color: #31b472;
+	color: white;
+	padding: 15px;
+	right: 0;
+	top: 0;
+	font-weight: 500;
+}
+
+.lmj-plant-item div {
+	display: flex;
+	justify-content: space-around;
+	width: 100%;
+ /* Ajoute de l'espace au-dessus des éléments */
+}
+
+ul.lmj-plant-list {
+	display: flex;
+	flex-wrap: wrap; /* Permet aux éléments de passer à la ligne suivante */
+	padding: 0;
+	list-style-type: none; /* Supprime les puces de la liste */
+	margin: 0; /* Supprime les marges par défaut de la liste */
+}
